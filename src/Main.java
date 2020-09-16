@@ -15,11 +15,11 @@ public class Main {
 
         int tasksToBeSolvedByOneStudent = 8;
 
-        while (Student.getAllStudentsTasksCount() <= numberofTask) {
+        while (Student.getAllStudentsTasksCount() < numberofTask) {
             for (Student obj : studentsArray
             ) {
                 obj.solveTasks(tasksArray);
-                if (obj.getPassedTasksCount() >= tasksToBeSolvedByOneStudent) {
+                if (obj.getPassedTasksCount() == tasksToBeSolvedByOneStudent) {
                     continue;
                 }
 
@@ -27,10 +27,10 @@ public class Main {
         }
 
 //       studentOne.solveTasks(tasksArray);
-        System.out.println(studentOne.getPassedTasksCount());
-        System.out.println(studentTwo.getPassedTasksCount());
-        System.out.println(Student.getAllStudentsTasksCount());
-        System.out.println(Student.totalAttempts);
+        System.out.println(studentOne.getPassedTasksCount()+" tasks solved by student one");
+        System.out.println(studentTwo.getPassedTasksCount()+" tasks solved by student two");
+        System.out.println(Student.getAllStudentsTasksCount()+" tasks solved by all students");
+        System.out.println(Student.totalAttempts+" total attempts");
     }
 
     public static Task[] createTasklist(int numberOfTasks) {
